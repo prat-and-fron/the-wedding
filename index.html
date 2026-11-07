@@ -94,6 +94,15 @@
     .event-actions{display:flex;justify-content:center;gap:14px;margin-top:18px;flex-wrap:wrap}
     .maps,.cal-link{display:inline-block;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:3px;font-weight:600}
     .cal-link{color:var(--gold)}
+    .ride-panel{max-width:820px;margin:28px auto 0;padding:26px 22px;background:rgba(250,247,239,.72);border:1px solid var(--line);border-radius:5px;text-align:center}
+    .ride-heading{font:600 1.65rem var(--serif);margin:0 0 5px;color:var(--ink)}
+    .ride-subtitle{font-size:.8rem;line-height:1.6;color:var(--muted);margin:0 0 18px}
+    .ride-buttons{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:620px;margin:0 auto}
+    .ride-button{display:flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:#fffdf8;color:var(--ink);font-size:.78rem;font-weight:700;letter-spacing:.04em;transition:.2s}
+    .ride-button:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(55,48,31,.09);background:#fff}
+    .ride-button .ride-mark{font-size:1.05rem;color:var(--gold)}
+    .ride-note{font-size:.68rem;line-height:1.5;color:var(--muted);margin:14px auto 0;max-width:620px}
+    @media(max-width:520px){.ride-buttons{grid-template-columns:1fr}.ride-button{min-height:46px}}
 
     /* Day Flow Timeline Section */
     .day-flow{background:var(--paper2);padding:90px 20px}
@@ -319,7 +328,7 @@
     <div class="hero-inner">
       <div class="hero-kicker">A celebration of love &amp; faith</div>
       <h2><span>Fronald</span><span class="amp">&amp;</span><span>Pratiksha</span></h2>
-      <div class="hero-date">03 December 2026 · Mumbai</div>
+      <div class="hero-date">03 December 2026 · Thane</div>
       
       <!-- Live Wedding Countdown -->
       <div class="countdown-wrap" id="weddingCountdown">
@@ -346,7 +355,7 @@
         <cite>Song of Solomon 3:4</cite>
       </div>
       
-      <div class="hashtags">#fernsandpetals &nbsp;&nbsp; #fnpincovenant</div>
+      <div class="hashtags">#fnpingrace &nbsp;&nbsp; #fernsandpetals &nbsp;&nbsp; #fnpincovenant</div>
     </div>
   </section>
 
@@ -384,6 +393,26 @@
           </div>
         </article>
       </div>
+
+      <div class="ride-panel" aria-label="Ride booking options">
+        <h3 class="ride-heading">Getting to the celebration</h3>
+        <p class="ride-subtitle">Travelling to Gloria Banquets? Choose your preferred ride service.</p>
+        <div class="ride-buttons">
+          <a class="ride-button" href="https://m.uber.com/ul/" target="_blank" rel="noopener" aria-label="Open Uber to book a ride">
+            <span class="ride-mark" aria-hidden="true">↗</span><span>Book with Uber</span>
+          </a>
+          <a class="ride-button" href="olacabs://app/launch?" data-fallback="https://book.olacabs.com/" target="_blank" rel="noopener" aria-label="Open Ola to book a ride">
+            <span class="ride-mark" aria-hidden="true">↗</span><span>Book with Ola</span>
+          </a>
+          <a class="ride-button" href="https://www.rapido.bike/" target="_blank" rel="noopener" aria-label="Open Rapido ride booking">
+            <span class="ride-mark" aria-hidden="true">↗</span><span>Book with Rapido</span>
+          </a>
+        </div>
+        <!-- <p class="ride-note">On mobile, Uber's universal link should open the app when installed. Ola uses its app link with a booking-page fallback. Rapido currently opens its official website because a public destination-prefill app link is not documented. Please confirm Gloria Banquets as your destination before booking.</p> -->
+        <div class="event-actions" style="margin-top:14px">
+          <a class="maps" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Gloria+Banquets%2C+Ghodbunder+Road%2C+Owale%2C+Thane%2C+Maharashtra+400607">Get directions on Google Maps →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -408,7 +437,7 @@
         </div>
         <div class="flow-step">
           <div class="flow-dot"></div>
-          <div class="flow-time">6:00 PM</div>
+          <div class="flow-time">5:30 PM</div>
           <div class="flow-title">Congratulations &amp; High Tea</div>
           <p class="flow-desc">Greetings with the newlyweds, family photography, and refreshments.</p>
         </div>
@@ -559,7 +588,7 @@
           
           <div class="field"><label for="message">A note for the couple</label><textarea id="message" name="message" placeholder="Leave us a little message…"></textarea></div>
           <button class="open-btn" type="submit" id="rsvpSubmitBtn">Send RSVP</button>
-          <p class="google-note">RSVP submissions are securely recorded in your Google Sheet.</p>
+          <p class="google-note">RSVP submissions are securely recorded in our Google Sheet.</p>
         </form>
 
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
@@ -572,7 +601,7 @@
     <div class="section-label">With love</div>
     <div class="names">Fronald <span class="amp">&amp;</span> Pratiksha</div>
     <p>03 December 2026 · Mumbai</p>
-    <div class="hashtags">#fernsandpetals &nbsp;&nbsp; #fnpincovenant</div>
+    <div class="hashtags">##fnpingrace &nbsp;&nbsp; fernsandpetals &nbsp;&nbsp; #fnpincovenant</div>
     <a class="backtop" href="#home">Back to the beginning ↑</a>
   </footer>
 </main>
@@ -583,7 +612,7 @@
   <span class="floating-music-label">Wedding Song</span>
   <span class="floating-music-btn" id="floatingMusicBtn">▶</span>
 </div>
-<audio id="weddingAudio" preload="none" loop src="assets/wedding-song.mp3"></audio>
+<audio id="weddingAudio" preload="none" src="assets/wedding-song.mp3"></audio>
 
 <div class="toast" id="toast"></div>
 
@@ -609,6 +638,16 @@
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 3500);
   }
+
+  // --- Ride-booking app links ---
+  // Ola's documented app URI opens the app where supported; fall back to its booking site.
+  document.querySelectorAll('.ride-button[data-fallback]').forEach(link => {
+    link.addEventListener('click', () => {
+      const fallback = link.dataset.fallback;
+      if (!fallback || !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) return;
+      window.setTimeout(() => { window.location.href = fallback; }, 1200);
+    });
+  });
 
   // --- Countdown to December 3, 2026 ---
   function updateCountdown() {
