@@ -684,8 +684,8 @@
       const key = btn.dataset.counter;
       counters[key] = Math.max(key === 'adult' ? 1 : 0, Math.min(20, counters[key] + Number(btn.dataset.change)));
       document.getElementById(key === 'adult' ? 'adultCount' : 'childCount').textContent = counters[key];
-      hiddenAdults.value = counters[key];
-      hiddenChildren.value = counters[key];
+      hiddenAdults.value = counters.adult;
+      hiddenChildren.value = counters.child;
     });
   });
 
